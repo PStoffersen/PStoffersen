@@ -1,5 +1,8 @@
 ### Hi there 👋
 
+This is my personal repository which im using for testing out and learning about the features in github
+
+
 <!--
 **PStoffersen/PStoffersen** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
