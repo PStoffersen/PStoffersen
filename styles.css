@@ -1,0 +1,80 @@
+const form = document.getElementById('betForm');
+const photoInput = document.getElementById('photo');
+const preview = document.getElementById('preview');
+const statusEl = document.getElementById('status');
+const submitBtn = document.getElementById('submitBtn');
+
+photoInput.addEventListener('change', () => {
+  const file = photoInput.files?.[0];
+  if (!file) {
+    preview.classList.add('hidden');
+    preview.src = '';
+    return;
+  }
+  preview.src = URL.createObjectURL(file);
+  preview.classList.remove('hidden');
+});
+
+function setStatus(message, isError = false) {
+  statusEl.textContent = message;
+  statusEl.style.color = isError ? '#fca5a5' : '#86efac';
+}
+
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result;
+      const base64 = String(result).split(',')[1];
+      resolve(base64);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  setStatus('Sender...');
+  submitBtn.disabled = true;
+
+  try {
+    const file = photoInput.files?.[0];
+    if (!file) throw new Error('Vælg et billede først.');
+    if (!window.APP_CONFIG?.API_URL || window.APP_CONFIG.API_URL.includes('INDSAET_DIN')) {
+      throw new Error('API_URL mangler i config.js');
+    }
+
+    const payload = {
+      member: document.getElementById('member').value,
+      matchDate: document.getElementById('matchDate').value,
+      matchName: document.getElementById('matchName').value,
+      odds: document.getElementById('odds').value,
+      stake: document.getElementById('stake').value,
+      note: document.getElementById('note').value,
+      fileName: file.name,
+      mimeType: file.type,
+      imageBase64: await fileToBase64(file)
+    };
+
+    const response = await fetch(window.APP_CONFIG.API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await response.json();
+    if (!response.ok || !data.success) {
+      throw new Error(data.message || 'Upload mislykkedes.');
+    }
+
+    setStatus('Gemt i Google Sheet og Google Drive.');
+    form.reset();
+    preview.classList.add('hidden');
+    preview.src = '';
+  } catch (error) {
+    setStatus(error.message || 'Der skete en fejl.', true);
+  } finally {
+    submitBtn.disabled = false;
+  }
+});
