@@ -6,8 +6,8 @@ You now have a **complete, user-friendly solution** to manage seasons in Program
 
 ---
 
-## The Problem (Old Way)
-- ❌ Manually recalculate week numbers each season
+## The Problem (Old Way)...+++
+- ❌ Manually recalculate week numbers each seasonpppp
 - ❌ Manually rebuild entire match schedule
 - ❌ Manually assign bye/fri odds teams
 - ❌ Update 15+ week columns by hand
