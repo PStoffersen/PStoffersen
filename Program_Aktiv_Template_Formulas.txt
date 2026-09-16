@@ -1,0 +1,341 @@
+Program Aktiv - New Season Template (Copy & Paste to Google Sheets)
+================================================================================
+
+ROW-BY-ROW STRUCTURE WITH FORMULAS
+(Copy each section below directly into your Google Sheet)
+
+================================================================================
+INPUT SECTION (Rows 1-7)
+================================================================================
+
+Row 2: [Merge A2:B2]
+A2: SEASON CONFIGURATION
+
+Row 3:
+A3: Season Name:
+C3: [INPUT] 2025-2026
+
+Row 4:
+A4: Season Start Date:
+C4: [INPUT] 2025-09-01
+
+Row 5-7: [BLANK for spacing]
+
+================================================================================
+SCHEDULE HEADERS (Row 8)
+================================================================================
+
+A8: Runde
+B8: Uge
+C8: Dato Start
+D8: Dato Slut
+E8: Hold 1
+F8: Hold 2
+G8: Fri Odds
+H8: Noter
+
+================================================================================
+SCHEDULE DATA - ROUND 1 (Rows 9-10)
+================================================================================
+
+Row 9:
+A9: Round 1
+B9: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C9: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D9: =C9+6
+E9: Kardinalus
+F9: Pingvinus
+G9: Kaninus
+H9: [empty]
+
+Row 10:
+A10: Round 1
+B10: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C10: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D10: =C10+6
+E10: Gorilla
+F10: King
+G10: (same week as above)
+H10: [empty]
+
+================================================================================
+SCHEDULE DATA - ROUND 2 (Rows 11-12)
+================================================================================
+
+Row 11:
+A11: Round 2
+B11: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C11: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D11: =C11+6
+E11: Kardinalus
+F11: Gorilla
+G11: Kaninus
+H11: [empty]
+
+Row 12:
+A12: Round 2
+B12: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C12: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D12: =C12+6
+E12: Pingvinus
+F12: King
+G12: (same week as above)
+H12: [empty]
+
+================================================================================
+SCHEDULE DATA - ROUND 3 (Rows 13-14)
+================================================================================
+
+Row 13:
+A13: Round 3
+B13: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C13: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D13: =C13+6
+E13: Kardinalus
+F13: King
+G13: Kaninus
+H13: [empty]
+
+Row 14:
+A14: Round 3
+B14: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C14: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D14: =C14+6
+E14: Pingvinus
+F14: Gorilla
+G14: (same week as above)
+H14: [empty]
+
+================================================================================
+SCHEDULE DATA - ROUND 4 (Rows 15-16)
+================================================================================
+
+Row 15:
+A15: Round 4
+B15: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C15: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D15: =C15+6
+E15: Kardinalus
+F15: Kaninus
+G15: King
+H15: [empty]
+
+Row 16:
+A16: Round 4
+B16: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C16: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D16: =C16+6
+E16: Pingvinus
+F16: Gorilla
+G16: (same week as above)
+H16: [empty]
+
+================================================================================
+SCHEDULE DATA - ROUND 5 (Rows 17-18)
+================================================================================
+
+Row 17:
+A17: Round 5
+B17: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C17: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D17: =C17+6
+E17: Pingvinus
+F17: Kaninus
+G17: Kardinalus
+H17: [empty]
+
+Row 18:
+A18: Round 5
+B18: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C18: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D18: =C18+6
+E18: Gorilla
+F18: King
+G18: (same week as above)
+H18: [empty]
+
+================================================================================
+FRI ODDS ROUND A (Row 19) - Insert After Round 5
+================================================================================
+
+Row 19:
+A19: FRI ODDS ROUND A
+B19: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C19: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D19: =C19+6
+E19: (All teams money only)
+F19: (No matches)
+G19: ALL
+H19: [empty]
+
+[Format Row 19 with orange/yellow background]
+
+================================================================================
+SCHEDULE DATA - ROUND 6 (Rows 20-21)
+================================================================================
+
+Row 20:
+A20: Round 6
+B20: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C20: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D20: =C20+6
+E20: Kardinalus
+F20: Pingvinus
+G20: Kaninus
+H20: [empty]
+
+Row 21:
+A21: Round 6
+B21: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C21: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D21: =C21+6
+E21: Gorilla
+F21: King
+G21: (same week as above)
+H21: [empty]
+
+================================================================================
+SCHEDULE DATA - ROUND 7 (Rows 22-23)
+================================================================================
+
+Row 22:
+A22: Round 7
+B22: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C22: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D22: =C22+6
+E22: Kardinalus
+F22: Gorilla
+G22: Kaninus
+H22: [empty]
+
+Row 23:
+A23: Round 7
+B23: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C23: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D23: =C23+6
+E23: Pingvinus
+F23: King
+G23: (same week as above)
+H23: [empty]
+
+================================================================================
+SCHEDULE DATA - ROUND 8 (Rows 24-25)
+================================================================================
+
+Row 24:
+A24: Round 8
+B24: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C24: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D24: =C24+6
+E24: Kardinalus
+F24: King
+G24: Kaninus
+H24: [empty]
+
+Row 25:
+A25: Round 8
+B25: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C25: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D25: =C25+6
+E25: Pingvinus
+F25: Gorilla
+G25: (same week as above)
+H25: [empty]
+
+================================================================================
+SCHEDULE DATA - ROUND 9 (Rows 26-27)
+================================================================================
+
+Row 26:
+A26: Round 9
+B26: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C26: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D26: =C26+6
+E26: Kardinalus
+F26: Kaninus
+G26: King
+H26: [empty]
+
+Row 27:
+A27: Round 9
+B27: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C27: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D27: =C27+6
+E27: Pingvinus
+F27: Gorilla
+G27: (same week as above)
+H27: [empty]
+
+================================================================================
+FRI ODDS ROUND B (Row 28) - Insert After Round 9
+================================================================================
+
+Row 28:
+A28: FRI ODDS ROUND B
+B28: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C28: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D28: =C28+6
+E28: (All teams money only)
+F28: (No matches)
+G28: ALL
+H28: [empty]
+
+[Format Row 28 with orange/yellow background]
+
+================================================================================
+SCHEDULE DATA - ROUND 10 (Rows 29-30)
+================================================================================
+
+Row 29:
+A29: Round 10
+B29: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C29: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D29: =C29+6
+E29: Pingvinus
+F29: Kaninus
+G29: Kardinalus
+H29: [empty]
+
+Row 30:
+A30: Round 10
+B30: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C30: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D30: =C30+6
+E30: Gorilla
+F30: King
+G30: (same week as above)
+H30: [empty]
+
+================================================================================
+FRI ODDS ROUND C (Row 31) - Insert After Round 10
+================================================================================
+
+Row 31:
+A31: FRI ODDS ROUND C
+B31: =ISOWEEKNUM($C$4+(ROW()-9)*7)
+C31: =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+D31: =C31+6
+E31: (All teams money only)
+F31: (No matches)
+G31: ALL
+H31: [empty]
+
+[Format Row 31 with orange/yellow background]
+
+================================================================================
+NOTES ON FORMULAS
+================================================================================
+
+Key Formula Components:
+- $C$4 = Season Start Date (absolute reference - won't change when copied)
+- (ROW()-9)*7 = Days to add (each row = 1 week = 7 days)
+- ISOWEEKNUM() = ISO week number (1-53)
+- WEEKDAY(..., 2) = Returns 1-7 where Monday=1, Sunday=7
+
+If formulas don't work:
+1. Check that C4 contains a valid date
+2. Copy the formula cells individually and paste to other rows
+3. Change ROW()-9 to ROW()-[actual row where data starts]
+
+Example: If your data starts at row 12 instead of row 9:
+Change (ROW()-9)*7 to (ROW()-12)*7

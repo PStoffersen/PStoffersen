@@ -1,0 +1,92 @@
+PROGRAM AKTIV - QUICK REFERENCE CARD
+========================================
+
+FOR A NEW SEASON: 5 SIMPLE STEPS
+
+Step 1: Enter Season Details
+  - Go to INPUT SECTION (top of sheet)
+  - C3: Enter season name (e.g., "2025-2026")
+  - C4: Enter start date (e.g., "2025-09-01")
+
+Step 2: Week Numbers Auto-Calculate
+  - All week columns auto-calculate based on start date
+  - No manual date entry needed!
+
+Step 3: Verify Schedule Structure
+  Use the pre-configured matchup table:
+  ┌────────────────────────────────┐
+  │ 10 Regular Rounds (2 matches)   │
+  │ 3-4 FRI ODDS Rounds (money only)│
+  │ Each team plays all others 2x   │
+  └────────────────────────────────┘
+
+Step 4: (Optional) Randomize Teams
+  If you want to change team matchups:
+  - Edit columns E, F, G (Hold 1, Hold 2, Fri Odds)
+  - Keep the structure: 10 regular + 3-4 fri odds rounds
+  - Verify each team plays all others twice
+
+Step 5: Done!
+  - Print or share the schedule
+  - Start entering results in notes/score columns as season progresses
+
+========================================
+
+TEAMS (Always Use These Names)
+  • Kardinalus
+  • Pingvinus
+  • Gorilla
+  • King
+  • Kaninus
+
+========================================
+
+SCHEDULE STRUCTURE
+  • Rounds 1-5: Regular rounds (weeks 36-40)
+  • FRI ODDS Round A (week 41)
+  • Rounds 6-9: Regular rounds (weeks 42-45)
+  • FRI ODDS Round B (week 46)
+  • Round 10: Regular round (week 47)
+  • FRI ODDS Round C (week 48)
+
+  Note: Actual weeks depend on start date
+
+========================================
+
+EACH SEASON CHECKLIST
+  ☐ Entered season name in C3
+  ☐ Entered start date in C4
+  ☐ Week numbers calculate correctly
+  ☐ All dates span ~15 weeks
+  ☐ All 5 teams in schedule
+  ☐ Each team plays all others exactly 2 times
+  ☐ 3-4 FRI ODDS rounds present
+  ☐ Shared schedule with participants
+
+========================================
+
+FORMULAS - IF SOMETHING BREAKS
+  Week Number:
+    =ISOWEEKNUM($C$4+(ROW()-9)*7)
+
+  Week Start (Monday):
+    =DATE(YEAR($C$4+(ROW()-9)*7),MONTH($C$4+(ROW()-9)*7),DAY($C$4+(ROW()-9)*7)-WEEKDAY($C$4+(ROW()-9)*7,2)+1)
+
+  Week End (Sunday):
+    =[Week Start] + 6
+
+  Adjust (ROW()-9) if data starts on different row
+
+========================================
+
+PRINTING TIPS
+  • Format: Portrait orientation
+  • Fit: 1 page wide × multiple pages tall
+  • Include: INPUT SECTION + full schedule
+  • Color code: FRI ODDS rows in different color
+
+========================================
+
+QUESTIONS?
+  Refer to: Program_Aktiv_Setup_Guide.md
+  Full formulas: Program_Aktiv_Template_Formulas.txt
